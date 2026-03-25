@@ -1,0 +1,73 @@
+<Window x:Class="Worms.GameSetupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Game Setup"
+        Height="750"
+        Width="900"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="#FF0F2A3D">
+
+    <Grid Margin="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Game Setup"
+                   FontSize="40"
+                   FontWeight="Bold"
+                   Foreground="White"
+                   HorizontalAlignment="Center"
+                   Margin="0,0,0,30"/>
+
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <GroupBox Header="Select Map"
+                          Foreground="White"
+                          FontSize="18"
+                          BorderBrush="#FF1E90FF"
+                          Margin="0,0,0,30">
+                    <ComboBox x:Name="MapComboBox"
+                              Height="45"
+                              FontSize="18"
+                              Margin="10"
+                              SelectionChanged="MapComboBox_SelectionChanged"/>
+                </GroupBox>
+
+                <GroupBox Header="Team Configurator"
+                          Foreground="White"
+                          FontSize="18"
+                          BorderBrush="#FF1E90FF">
+                    <StackPanel x:Name="TeamsPanel" Margin="10"/>
+                </GroupBox>
+            </StackPanel>
+        </ScrollViewer>
+
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    Margin="0,30,0,0">
+
+            <Button x:Name="BackButton"
+                    Content="Back"
+                    Width="150"
+                    Height="50"
+                    FontSize="20"
+                    Margin="0,0,40,0"
+                    Background="#FF555555"
+                    Foreground="White"
+                    Click="BackButton_Click"/>
+
+            <Button x:Name="StartButton"
+                    Content="Start game"
+                    Width="250"
+                    Height="50"
+                    FontSize="20"
+                    Background="#FF1E90FF"
+                    Foreground="White"
+                    Click="StartButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
